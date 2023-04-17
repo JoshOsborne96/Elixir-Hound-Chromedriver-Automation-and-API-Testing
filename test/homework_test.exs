@@ -36,6 +36,7 @@ defmodule HomeworkTest do
         assert 2 == row_num
         assert 2 == col_num
         assert two_by_two_values
+
     end
 
     hound_session()
@@ -107,6 +108,7 @@ defmodule HomeworkTest do
         assert 4 == row_num
         assert 4 == col_num
         assert four_by_four_values
+
     end
 
     hound_session()
@@ -163,8 +165,6 @@ defmodule HomeworkTest do
         assert false == table_display
 
     end
-
-
   end
 
   describe "File upload tests" do
@@ -190,6 +190,7 @@ defmodule HomeworkTest do
 
       assert "BILL SDET Homework" == page_title
       assert "File Was Successfully Uploaded!" == alert_message
+
     end
 
     hound_session()
@@ -308,6 +309,7 @@ defmodule HomeworkTest do
 
         assert "BILL SDET Homework" == page_title
         assert "Loading . . ." == loading_text
+
       end
   end
 
@@ -364,17 +366,10 @@ defmodule HomeworkTest do
       accept_dialog()
 
 
-
-      Process.sleep(3000)
-
-
-
-
       assert "BILL SDET Homework" == page_title
       assert page_1_info == page_1_alert
       assert page_2_info == page_2_alert
       assert page_3_info == page_3_alert
-
 
     end
 
@@ -400,15 +395,11 @@ defmodule HomeworkTest do
       #each field could be written
 
 
-
-
       assert "BILL SDET Homework" == page_title
       assert "Invalid phone number" == invalid_number_text
       assert "Required" == fname_required_text
       assert "Required" == address_required_text
       assert "Required" == delivery_date_required_text
-
-
 
     end
   end
