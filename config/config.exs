@@ -1,6 +1,6 @@
 # This file is responsible for configuring your application
 # and its dependencies with the aid of the Mix.Config module.
-use Mix.Config
+import Config
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
@@ -9,6 +9,7 @@ use Mix.Config
 # third-party users, it should be done in your "mix.exs" file.
 
 config :hound, driver: "chrome_driver"
+config :tesla, adapter: Tesla.Adapter.Hackney
 
 # You can configure your application as:
 #
