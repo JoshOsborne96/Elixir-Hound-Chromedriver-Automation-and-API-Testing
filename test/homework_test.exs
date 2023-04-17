@@ -150,13 +150,19 @@ defmodule HomeworkTest do
 
     hound_session()
 
-    test "table test - no table" do
+    test "table test - hide table" do
       navigate_to("https://qa-homework.divvy.co/")
 
         page_title = page_title()
 
         simple_table_link = find_element(:xpath, "/html/body/div/div[1]/nav/ul/li[2]/a")
         click(simple_table_link)
+
+        two_by_two_table_btn = find_element(:css, "[data-testid=\"ShowText--Button-1\"]")
+        click(two_by_two_table_btn)
+
+        hide_btn = find_element(:css, "[data-testid=\"ShowText--Button-0\"]")
+        click(hide_btn)
 
         table_element = find_element(:css, "[data-testid=\"TableBody\"]")
         table_display = element_displayed?(table_element)
