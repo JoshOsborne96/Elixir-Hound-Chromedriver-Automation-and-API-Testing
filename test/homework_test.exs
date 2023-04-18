@@ -240,6 +240,11 @@ defmodule HomeworkTest do
 
         file_path = "/Users/joshosborne/Downloads/downloaded_file.txt"
 
+        #Ideally, it would be nice to put in a system here to verify that the correct file was downloaded.
+        #For example, if this a file with this name already existed, this test would pass even if the download didn't
+        #actually complete. Maybe changing the file name to a UUID so it is assert that the correct file was downloaded
+        #each time.
+
         downloaded_file = File.exists?(file_path)
         file_contents = File.read(file_path)
 
@@ -286,7 +291,7 @@ defmodule HomeworkTest do
         dynamic_load_link = find_element(:xpath, "/html/body/div/div[1]/nav/ul/li[5]/a")
         click(dynamic_load_link)
 
-        status_prompt = find_element(:css, "[data-testid=\"DynamicLoaderMessage--Info\"]", 60)
+        status_prompt = find_element(:css, "[data-testid=\"DynamicLoaderMessage--Info\"]", 100)
         complete_text = visible_text(status_prompt)
 
 
